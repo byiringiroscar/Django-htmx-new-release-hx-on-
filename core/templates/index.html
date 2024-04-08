@@ -3,7 +3,14 @@
 
 {% block content %}
 
-<div id="root">Hello</div>
+<div id="root">
+    <button hx-get="{% url 'index' %}">Fetch with htmx</button>
+
+
+    <div id="user-table">
+        No users yet:(
+    </div>
+</div>
 
 
 {% endblock %}
