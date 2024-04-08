@@ -7,4 +7,6 @@ def index(request):
 
 
 def htmx_content(request):
-    return render(request, 'partials/user-table.html')
+    response =  render(request, 'partials/user-table.html')
+    response['HX-Trigger'] = 'custom-event'
+    return response
