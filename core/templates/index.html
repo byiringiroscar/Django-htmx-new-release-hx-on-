@@ -4,7 +4,7 @@
 {% block content %}
 
 <div id="root">
-    <button hx-get="{% url 'htmx-content' %}" hx-target="#user-table">Fetch with htmx</button>
+    <button hx-get="{% url 'htmx-content' %}" hx-target="#user-table" hx-on="custom-event: document.body.style.background='gray'">Fetch with htmx</button>
 
 
     <div id="user-table" hx-on="htmx:afterSettle: outputMessage()">
