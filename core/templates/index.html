@@ -7,10 +7,24 @@
     <button hx-get="{% url 'htmx-content' %}" hx-target="#user-table">Fetch with htmx</button>
 
 
-    <div id="user-table" hx-on="htmx:afterSettle: alert('content is in Dom')">
+    <div id="user-table" hx-on="htmx:afterSettle: outputMessage()">
         No users yet:(
     </div>
 </div>
+
+
+<script>
+    function outputMessage() {
+        let trs = document.querySelectorAll('tbody > tr');
+        let root = document.getElementById('root');
+
+
+        let p = document.createElement('p');
+        let text = document.createTextNode(`${trs.length} users were discovered`);
+        p.appendChild(text);
+        root.appendChild(p);
+    }
+</script>
 
 
 {% endblock %}
