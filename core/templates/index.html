@@ -7,7 +7,7 @@
     <button hx-get="{% url 'htmx-content' %}" hx-target="#user-table" hx-on="htmx:afterRequest: alert('response received')">Fetch with htmx</button>
 
 
-    <div id="user-table">
+    <div id="user-table" hx-on="htmx:afterSettle: alert('content is in Dom')">
         No users yet:(
     </div>
 </div>
